@@ -1,36 +1,86 @@
+[![Preview do site HS Barber Club](assets/img/preview.png)](https://assisfilipee.github.io/hs-barber-club-barbearia/)
+
 # HS Barber Club
 
-Landing page institucional em HTML, CSS e JavaScript puro, sem dependências de produção. Abra `index.html` no navegador ou sirva esta pasta com um servidor estático. Fotografias e logo originais estão preservadas em `assets/img/`.
+Site institucional da HS Barber Club, barbearia em Palhoça, Santa Catarina. Uma apresentação digital com identidade visual marcante, serviços, galeria de trabalhos e acesso direto aos canais de agendamento.
 
-## Configuração antes de publicar
+**[Ver o projeto online ↗](https://assisfilipee.github.io/hs-barber-club-barbearia/)**
 
-- **Domínio definitivo:** informar em `SITE_CONFIG.canonicalUrl`, em `assets/js/main.js`, com a URL completa e barra final. Para SEO independente de JavaScript, inserir também `<link rel="canonical" href="URL_CONFIRMADA">` e `<meta property="og:url" content="URL_CONFIRMADA">` no head de `index.html`. Substituir os caminhos de `og:image` e `twitter:image` pela URL absoluta de `assets/img/hs-ambiente.webp` nesse domínio. Não publicar valores fictícios. Criar `robots.txt` e `sitemap.xml` quando o domínio for definido.
-- **Perfil da Empresa no Google:** inserir a URL exata em `SITE_CONFIG.googleReviewsUrl`. O botão “Ver no Google” permanece desativado até essa informação ser fornecida. Também pode receber `href`, `target="_blank"` e `rel="noopener noreferrer"` diretamente no HTML, removendo `aria-disabled`, para funcionar sem JavaScript.
-- **Depoimentos reais:** preencher os três `data-review-slot` em `index.html` com textos e autores confirmados e remover `hidden` do contêiner. Estilizar conforme o volume real recebido. Nenhum nome ou depoimento foi inventado.
-- **Equipe:** há comentários junto às fotografias indicando onde adicionar nome, cargo e Instagram confirmados. As imagens mostram atendimentos, sem identificação fictícia.
-- **Planos:** todos os CTAs usam o link fornecido da Beacons. Valores e condições não foram informados.
-- **Crédito:** “Desenvolvido por Filipe Assis” está preservado; adicionar link ao nome quando a URL profissional for fornecida.
+## Sobre o projeto
 
-## Comportamentos
+A página foi desenvolvida para apresentar a marca, valorizar o ambiente e os trabalhos da barbearia e facilitar o contato com novos clientes. O layout reúne fotografias do estabelecimento, tipografia de destaque e uma paleta escura com detalhes em azul.
 
-Menu mobile em `dialog`, com foco contido, fechamento por Escape e bloqueio de rolagem; galeria ampliada com fotografias completas; âncoras compensadas pela altura do header; navegação ativa; reveal e parallax discretos; respeito a movimento reduzido; WhatsApp e retorno ao topo. Os tempos da notificação ficam em `SITE_CONFIG.whatsappNotice`. Fechar a notificação impede novas exibições durante a visita.
+A navegação em página única organiza as informações da experiência HS: apresentação da barbearia, serviços, galeria, clube de planos, avaliações, equipe e localização.
 
-O conteúdo essencial e os links funcionam sem JavaScript. Sem JavaScript, a navegação também está disponível no rodapé; as fotos da galeria abrem diretamente.
+## Funcionalidades
 
-SEO local: um H1, metadados sociais e JSON-LD HairSalon com dados fornecidos. A nota 5,0 e mais de 100 avaliações foram fornecidas no briefing; não há avaliações fictícias nem marcação de avaliação agregada no schema.
+- Layout responsivo para celulares, tablets e desktops.
+- Menu mobile com controle de foco e fechamento pela tecla Escape.
+- Galeria com ampliação das fotografias.
+- Links para agendamento, WhatsApp, Instagram e rotas no Google Maps.
+- Navegação por seções, indicação da seção ativa e botão de retorno ao topo.
+- Animações de entrada e efeitos de rolagem com suporte à preferência por movimento reduzido.
+- Metadados sociais e dados estruturados do tipo `HairSalon` para descrever o negócio.
 
-## Validação da primeira versão
+## Tecnologias
 
-Testes executados no Chrome local em 3 de outubro de 2026:
+| Tecnologia | Aplicação |
+| --- | --- |
+| HTML5 | Estrutura semântica e conteúdo |
+| CSS3 | Identidade visual, responsividade e animações |
+| JavaScript | Menu, galeria e interações |
+| GitHub Pages | Hospedagem da versão de demonstração |
 
-- Larguras de 320, 375, 390, 430, 768, 1024, 1440 e 1920 px: a largura de rolagem correspondeu à viewport em todas, sem overflow horizontal da página.
-- Âncoras do menu posicionadas imediatamente abaixo do header, com compensação de 88 px no desktop e 72 px no mobile; também conferidas com scroll suave.
-- Menu mobile: abertura, bloqueio de rolagem, `aria-expanded`, foco contido, fechamento por Escape e navegação para uma seção.
-- Galeria: abertura, carregamento da fotografia completa, fechamento por Escape e retorno do foco ao link de origem.
-- Notificação do WhatsApp: exibição após o intervalo configurado e dispensa pelo usuário. Em telas pequenas, a notificação é adiada quando cobriria um link; o botão de retorno ao topo é ocultado quando se sobrepõe a um link.
-- Imagens: todos os caminhos usados carregaram, sem imagens quebradas. Dimensões originais verificadas. Logo e fotografias não foram editadas.
-- JavaScript: sintaxe válida, nenhuma exceção ou mensagem de erro no console durante os testes. Reveal conferido; movimento reduzido respeitado.
-- Estrutura: um H1, JSON-LD válido, destinos internos existentes e atributos de segurança dos links externos conferidos. Os URLs externos correspondem aos fornecidos; disponibilidade dos serviços externos não foi auditada.
-- Conteúdo principal visível sem JavaScript. Revisão visual das seções em desktop e mobile, incluindo 320 px.
+O projeto utiliza HTML, CSS e JavaScript puro, sem frameworks ou dependências de produção. Não é necessário instalar pacotes ou executar uma etapa de build.
 
-Ainda é recomendável conferir em Safari/iOS e em aparelhos físicos antes de publicar; esses ambientes não estavam disponíveis nesta sessão. Não foram medidos Core Web Vitals em produção.
+## Estrutura
+
+```text
+hs-barber-club-barbearia/
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── img/
+│   │   └── Fotografias, logotipo e preview
+│   └── js/
+│       └── main.js
+├── .gitignore
+├── index.html
+└── README.md
+```
+
+## Executar localmente
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/assisfilipee/hs-barber-club-barbearia.git
+   ```
+
+2. Acesse a pasta:
+
+   ```bash
+   cd hs-barber-club-barbearia
+   ```
+
+3. Abra `index.html` no navegador ou sirva a pasta com um servidor estático de sua preferência.
+
+## Personalização e publicação definitiva
+
+As principais configurações de comportamento ficam em `SITE_CONFIG`, no arquivo `assets/js/main.js`. Os textos e links estão em `index.html`, e os estilos em `assets/css/style.css`.
+
+Para a entrega definitiva, completar os dados ainda pendentes:
+
+- **Domínio:** definir `canonicalUrl`, adicionar os metadados estáticos `canonical` e `og:url` e usar URLs absolutas nas imagens de compartilhamento. Criar `robots.txt` e `sitemap.xml` conforme o endereço definitivo.
+- **Avaliações:** informar o link exato do Perfil da Empresa no Google em `googleReviewsUrl`. O botão correspondente permanece desativado até essa configuração. Os espaços de depoimentos estão ocultos e devem receber apenas textos e autores confirmados.
+- **Equipe e planos:** complementar nomes, perfis profissionais, valores e condições quando fornecidos. Os botões de planos já direcionam para a página da barbearia na Beacons.
+
+## Validação
+
+Conforme o registro da primeira versão, os testes locais no Chrome em 3 de outubro de 2026 cobriram larguras de 320 a 1920 px, navegação por âncoras, menu mobile, galeria, carregamento de imagens e comportamento sem JavaScript. Também foram conferidos a sintaxe do JavaScript, os destinos internos e o JSON-LD.
+
+A validação em Safari/iOS, em aparelhos físicos e a medição de Core Web Vitals em produção permanecem pendentes.
+
+## Desenvolvimento
+
+Desenvolvido por **[Filipe Assis](https://github.com/assisfilipee)**.
